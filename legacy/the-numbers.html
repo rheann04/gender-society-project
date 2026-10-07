@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Numbers | Teenage Pregnancy sa Pilipinas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Fraunces:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰ Menu</button>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" aria-label="Close menu" onclick="toggleMenu()">✕</button>
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="the-numbers.html" onclick="toggleMenu()">The Numbers</a>
+    <a href="why-it-happens.html" onclick="toggleMenu()">Why It Happens</a>
+    <a href="know-the-law.html" onclick="toggleMenu()">Know the Law</a>
+    <a href="learn-and-play.html" onclick="toggleMenu()">Learn & Play</a>
+    <a href="get-help.html" onclick="toggleMenu()">Get Help</a>
+    <a href="about-us.html" onclick="toggleMenu()">About Us</a>
+    <a href="references.html" onclick="toggleMenu()">References</a>
+  </div>
+
+  <nav class="nav-tabs" aria-label="Page navigation">
+    <a href="index.html" class="nav-tab">Home</a>
+    <a href="the-numbers.html" class="nav-tab active" aria-current="page">Numbers</a>
+    <a href="why-it-happens.html" class="nav-tab">Why</a>
+    <a href="know-the-law.html" class="nav-tab">Laws</a>
+    <a href="learn-and-play.html" class="nav-tab">Play</a>
+    <a href="get-help.html" class="nav-tab">Help</a>
+    <a href="about-us.html" class="nav-tab">About</a>
+    <a href="references.html" class="nav-tab">Refs</a>
+  </nav>
+
+  <main id="main-content" class="notebook-paper">
+    <div class="container">
+      <h1>
+        <span class="handwritten">The</span>
+        <span class="highlight">Numbers</span>
+      </h1>
+
+      <p class="handwritten" style="font-size: 1.3rem;">
+        Totoong data. Walang hula-hula.
+      </p>
+
+      <!-- Trend Chart -->
+      <section class="graph-paper folded-corner" style="margin: var(--space-xl) 0; padding: var(--space-xl);">
+        <h2>Trend: Teenage Pregnancy (2017-2022)</h2>
+        <p>
+          Mababa na kaysa noong 2017, pero <span class="red-pen">hindi pa sapat</span>.
+        </p>
+
+        <!-- Hand-drawn SVG Bar Chart -->
+        <div style="margin: var(--space-lg) 0; overflow-x: auto;">
+          <svg width="100%" height="300" viewBox="0 0 500 300" aria-label="Bar chart showing teenage pregnancy rates from 2017 to 2022" role="img">
+            <!-- Grid lines -->
+            <line x1="50" y1="50" x2="450" y2="50" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="50" y1="100" x2="450" y2="100" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="50" y1="150" x2="450" y2="150" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="50" y1="200" x2="450" y2="200" stroke="#ddd" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="50" y1="250" x2="450" y2="250" stroke="#333" stroke-width="2"/>
+
+            <!-- Y-axis labels -->
+            <text x="40" y="55" font-family="IBM Plex Sans" font-size="12" text-anchor="end">10%</text>
+            <text x="40" y="105" font-family="IBM Plex Sans" font-size="12" text-anchor="end">7.5%</text>
+            <text x="40" y="155" font-family="IBM Plex Sans" font-size="12" text-anchor="end">5%</text>
+            <text x="40" y="205" font-family="IBM Plex Sans" font-size="12" text-anchor="end">2.5%</text>
+            <text x="40" y="255" font-family="IBM Plex Sans" font-size="12" text-anchor="end">0%</text>
+
+            <!-- Bars with hand-drawn feel -->
+            <!-- 2017: 8.6% -->
+            <rect x="70" y="78" y="78" width="60" height="172" fill="#1F4FD8" opacity="0.7" rx="2"/>
+            <text x="100" y="70" font-family="Caveat" font-size="16" text-anchor="middle" fill="#D93025">8.6%</text>
+            <text x="100" y="270" font-family="IBM Plex Sans" font-size="12" text-anchor="middle">2017</text>
+
+            <!-- 2022: 5.4% -->
+            <rect x="200" y="142" width="60" height="108" fill="#1F4FD8" opacity="0.7" rx="2"/>
+            <text x="230" y="135" font-family="Caveat" font-size="16" text-anchor="middle" fill="#D93025">5.4%</text>
+            <text x="230" y="270" font-family="IBM Plex Sans" font-size="12" text-anchor="middle">2022</text>
+
+            <!-- Arrow showing decrease -->
+            <path d="M 140 100 Q 170 120 190 140" stroke="#D93025" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+            <text x="165" y="90" font-family="Caveat" font-size="14" fill="#D93025">↓ 3.2%</text>
+          </svg>
+        </div>
+
+        <p class="handwritten" style="font-size: 0.9rem; color: #666;">
+          Source: Philippine Statistics Authority, 2022 National Demographic and Health Survey<sup>[1]</sup>
+        </p>
+      </section>
+
+      <!-- Age Breakdown -->
+      <section style="margin: var(--space-xl) 0;">
+        <h2>By Age (2022)</h2>
+        <p>
+          Mas mataas sa older teens, pero ang <span class="highlight-pink">very young mothers</span> (10-14) ang pinaka-alarming dahil ito ay indicative ng abuse.
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-md); margin: var(--space-lg) 0;">
+          <div class="paper-clip-card">
+            <div class="hand-number">13.3%</div>
+            <p><strong>ng 19-year-olds</strong> ang naging buntis<sup>[1]</sup></p>
+          </div>
+
+          <div class="paper-clip-card">
+            <div class="hand-number">5.9%</div>
+            <p><strong>ng 18-year-olds</strong> ang naging buntis<sup>[1]</sup></p>
+          </div>
+
+          <div class="paper-clip-card">
+            <div class="hand-number">1.4%</div>
+            <p><strong>ng 15-year-olds</strong> ang naging buntis<sup>[1]</sup></p>
+          </div>
+        </div>
+
+        <div class="sticky-note" style="transform: rotate(2deg); margin: var(--space-lg) 0;">
+          <p class="handwritten-red">
+            ⚠️ Noong 2023, 3,343 live births ang nai-record sa mothers aged 9-14<sup>[2]</sup>. Ito ay tumaas mula sa 2,411 noong 2019.
+          </p>
+          <p style="font-size: 0.85rem; margin-top: var(--space-sm);">
+            Source: Commission on Population and Development, citing PSA 2023 data
+          </p>
+        </div>
+      </section>
+
+      <!-- Regional Differences -->
+      <section class="yellow-pad torn-edge" style="margin: var(--space-xl) 0; padding: var(--space-xl);">
+        <h2>By Region (2022)</h2>
+        <p>
+          Hindi pantay ang sitwasyon sa buong Pilipinas. Ang mga probinsya ay may higher rates kaysa sa urban areas.
+        </p>
+
+        <ul class="checkbox-list">
+          <li class="checked"><strong>Northern Mindanao:</strong> 10.9% (highest)<sup>[1]</sup></li>
+          <li class="checked"><strong>Davao Region:</strong> 8.2%<sup>[1]</sup></li>
+          <li class="checked"><strong>Central Luzon:</strong> 8.0%<sup>[1]</sup></li>
+          <li class="checked"><strong>Caraga:</strong> 7.7%<sup>[1]</sup></li>
+          <li><strong>Ilocos Region:</strong> 2.4% (lowest)<sup>[1]</sup></li>
+          <li><strong>Bicol Region:</strong> 2.4% (lowest)<sup>[1]</sup></li>
+        </ul>
+
+        <p class="handwritten" style="margin-top: var(--space-md);">
+          Rural areas: 6.1% vs Urban areas: 4.8%<sup>[1]</sup>
+        </p>
+
+        <!-- Photo: Jeepney Window -->
+        <div class="notebook-photo taped photocopy placeholder" style="max-width: 400px; margin: var(--space-lg) auto;">
+          <img src="assets/photos/PLACEHOLDER-jeepney.jpg" alt="View through a jeepney window showing a Philippine community street" width="400" height="300" loading="lazy">
+          <div class="photo-caption">Every community is different. Every story matters.</div>
+        </div>
+      </section>
+
+      <!-- Income Disparity -->
+      <section style="margin: var(--space-xl) 0;">
+        <h2>By Wealth Quintile</h2>
+        <p>
+          Ang teenage pregnancy ay mas common sa <span class="highlight">poorest families</span>.
+        </p>
+
+        <div style="margin: var(--space-lg) 0;">
+          <svg width="100%" height="200" viewBox="0 0 400 200" aria-label="Chart showing teenage pregnancy by wealth quintile" role="img">
+            <!-- Poorest: 10.3% -->
+            <rect x="50" y="20" width="80" height="150" fill="#D93025" opacity="0.7" rx="2"/>
+            <text x="90" y="15" font-family="Caveat" font-size="14" text-anchor="middle" fill="#D93025">10.3%</text>
+            <text x="90" y="185" font-family="IBM Plex Sans" font-size="11" text-anchor="middle">Poorest</text>
+
+            <!-- Wealthiest: 1.8% -->
+            <rect x="270" y="123" width="80" height="47" fill="#1F4FD8" opacity="0.7" rx="2"/>
+            <text x="310" y="118" font-family="Caveat" font-size="14" text-anchor="middle" fill="#1F4FD8">1.8%</text>
+            <text x="310" y="185" font-family="IBM Plex Sans" font-size="11" text-anchor="middle">Wealthiest</text>
+
+            <!-- Comparison arrow -->
+            <path d="M 150 95 L 260 145" stroke="#666" stroke-width="2" stroke-dasharray="5,5"/>
+          </svg>
+        </div>
+
+        <p class="handwritten" style="font-size: 0.9rem; color: #666;">
+          Source: Philippine Statistics Authority, 2022 NDHS<sup>[1]</sup>
+        </p>
+      </section>
+
+      <!-- Effects on Schooling -->
+      <section class="graph-paper folded-corner" style="margin: var(--space-xl) 0; padding: var(--space-xl);">
+        <h2>Effects on Education</h2>
+        <p>
+          Ang teenage pregnancy ay <span class="red-pen">major barrier</span> sa pagtatapos ng pag-aaral.
+        </p>
+
+        <div class="sticky-note" style="transform: rotate(-1deg);">
+          <p>
+            Ang mga teenage mothers ay less likely na makapag-high school at college graduation kaysa sa mga hindi naging buntis sa teenage years<sup>[3]</sup>.
+          </p>
+        </div>
+
+        <p>
+          This limits their future opportunities and earning potential, creating a cycle of poverty that can affect their children too.
+        </p>
+      </section>
+
+      <!-- Health Risks -->
+      <section style="margin: var(--space-xl) 0;">
+        <h2>Health Risks</h2>
+        <p>
+          Ang mga very young mothers (10-14) ay may higher risk ng:
+        </p>
+
+        <ul class="checkbox-list">
+          <li class="checked">Preterm birth</li>
+          <li class="checked">Low birth weight</li>
+          <li class="checked">Eclampsia (high blood pressure complications)</li>
+          <li class="checked">Obstetric fistula</li>
+          <li class="checked">Maternal mortality<sup>[3]</sup></li>
+        </ul>
+
+        <p class="handwritten-red" style="margin-top: var(--space-md);">
+          Ang mga babies ng teenage mothers din ay may higher risk ng health complications.
+        </p>
+      </section>
+
+      <!-- Summary -->
+      <div class="sticky-note" style="max-width: 100%; margin: var(--space-xl) 0;">
+        <h3 class="handwritten">Summary</h3>
+        <p>
+          Ang numbers ay nagpapakita na ang teenage pregnancy ay:
+        </p>
+        <ul class="checkbox-list">
+          <li class="checked">Declining, pero still a major problem</li>
+          <li class="checked">Higher sa rural areas at poorest families</li>
+          <li class="checked">Most alarming sa very young adolescents (10-14)</li>
+          <li class="checked">May serious effects sa education at health</li>
+        </ul>
+      </div>
+
+      <div style="background: var(--teacher-red); color: white; padding: var(--space-md); border-radius: var(--radius-sm); margin: var(--space-xl) 0;">
+        <p style="margin: 0; font-weight: 600;">
+          ⚠️ Note: This page discusses health data. If you need help right now, check the <a href="get-help.html" style="color: white; text-decoration: underline;">Get Help</a> page.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="help-banner">
+        <p style="margin: 0; font-size: 1.1rem;">
+          Need help right now? <a href="get-help.html">Visit the Get Help page →</a>
+        </p>
+      </div>
+
+      <p class="disclaimer">
+        This website is for educational purposes only. It is not medical or legal advice.
+      </p>
+
+      <p class="handwritten" style="font-size: 0.9rem;">
+        Created for Gender and Society class • School Project
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const isOpen = menu.classList.contains('open');
+      menu.classList.toggle('open');
+      menu.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.querySelector('.mobile-menu-btn');
+      if (menu.classList.contains('open') && !menu.contains(event.target) && !btn.contains(event.target)) {
+        toggleMenu();
+      }
+    });
+  </script>
+</body>
+</html>

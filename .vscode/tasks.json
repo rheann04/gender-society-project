@@ -1,0 +1,61 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build app",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check URL availability",
+			"type": "shell",
+			"command": "cmd /c \"curl -I -L -sS https://www.popcom.gov.ph/ | findstr /i \\\"HTTP/\\\" && echo --- && curl -I -L -sS https://www.officialgazette.gov.ph/2021/12/10/republic-act-no-11596/ | findstr /i \\\"HTTP/\\\" && echo --- && curl -I -L -sS https://www.officialgazette.gov.ph/2021/06/25/executive-order-no-141-2021/ | findstr /i \\\"HTTP/\\\" && echo --- && curl -I -L -sS https://psa.gov.ph/statistics/vital-statistics | findstr /i \\\"HTTP/\\\"\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build verification",
+			"type": "shell",
+			"command": "npm run build",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check photo sizes",
+			"type": "shell",
+			"command": "Get-ChildItem 'c:\\Rhe Ann\\src\\assets\\photos' | Select-Object Name, @{Name='Length';Expression={$_.Length / 1KB}} | Format-Table -AutoSize",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Optimize health photo",
+			"type": "shell",
+			"command": "\"c:/Rhe Ann/.venv/Scripts/python.exe\" -c \"from PIL import Image; from pathlib import Path; src=Path(r'c:\\Rhe Ann\\src\\assets\\photos\\05707jfNational_Center_for_Mental_Health_Mauway_Mandaluyong_Cityfvf_02.jpg'); dst=src.with_suffix('.webp'); img=Image.open(src); img = img.convert('RGB'); img.thumbnail((1400, 1200), Image.Resampling.LANCZOS); img.save(dst, format='WEBP', quality=70, method=6, optimize=True); print(dst.name, dst.stat().st_size)\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Remove temp script",
+			"type": "shell",
+			"command": "$p = 'c:\\Rhe Ann\\optimize_photo.py'; if (Test-Path $p) { Remove-Item -LiteralPath $p -Force; Write-Output 'deleted' } else { Write-Output 'not found' }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run Vite dev server for visual verification",
+			"type": "shell",
+			"command": "npm run dev -- --host 127.0.0.1",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Restart Vite for final check",
+			"type": "shell",
+			"command": "npm run dev -- --host 127.0.0.1",
+			"isBackground": true,
+			"problemMatcher": []
+		}
+	]
+}

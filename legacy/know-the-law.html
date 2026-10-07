@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Know the Law | Teenage Pregnancy sa Pilipinas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Fraunces:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰ Menu</button>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" aria-label="Close menu" onclick="toggleMenu()">✕</button>
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="the-numbers.html" onclick="toggleMenu()">The Numbers</a>
+    <a href="why-it-happens.html" onclick="toggleMenu()">Why It Happens</a>
+    <a href="know-the-law.html" onclick="toggleMenu()">Know the Law</a>
+    <a href="learn-and-play.html" onclick="toggleMenu()">Learn & Play</a>
+    <a href="get-help.html" onclick="toggleMenu()">Get Help</a>
+    <a href="about-us.html" onclick="toggleMenu()">About Us</a>
+    <a href="references.html" onclick="toggleMenu()">References</a>
+  </div>
+
+  <nav class="nav-tabs" aria-label="Page navigation">
+    <a href="index.html" class="nav-tab">Home</a>
+    <a href="the-numbers.html" class="nav-tab">Numbers</a>
+    <a href="why-it-happens.html" class="nav-tab">Why</a>
+    <a href="know-the-law.html" class="nav-tab active" aria-current="page">Laws</a>
+    <a href="learn-and-play.html" class="nav-tab">Play</a>
+    <a href="get-help.html" class="nav-tab">Help</a>
+    <a href="about-us.html" class="nav-tab">About</a>
+    <a href="references.html" class="nav-tab">Refs</a>
+  </nav>
+
+  <main id="main-content" class="notebook-paper">
+    <div class="container">
+      <h1>
+        <span class="handwritten">Know</span>
+        <span class="highlight">the Law</span>
+      </h1>
+
+      <p class="handwritten" style="font-size: 1.3rem;">
+        Ang batas ay nandiyan para protektahan ka. Alamin mo.
+      </p>
+
+      <p>
+        I-click ang tabs sa ibaba para makita ang mga batas at policies na may kinalaman sa teenage pregnancy, reproductive health, at protection ng kabataan.
+      </p>
+
+      <!-- Interactive Law Explorer -->
+      <section class="graph-paper folded-corner" style="margin: var(--space-xl) 0; padding: var(--space-xl);">
+        <div class="tabs" role="tablist" aria-label="Law categories">
+          <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-rh" id="btn-rh" onclick="showTab('rh')">RH Law</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-child" id="btn-child" onclick="showTab('child')">Child Protection</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-consent" id="btn-consent" onclick="showTab('consent')">Age of Consent</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-marriage" id="btn-marriage" onclick="showTab('marriage')">Child Marriage</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-education" id="btn-education" onclick="showTab('education')">Education Rights</button>
+          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-executive" id="btn-executive" onclick="showTab('executive')">Executive Orders</button>
+        </div>
+
+        <!-- RH Law Tab -->
+        <div class="tab-content active" id="tab-rh" role="tabpanel" aria-labelledby="btn-rh">
+          <div class="paper-clip-card">
+            <h3>RA 10354 (2012)</h3>
+            <p class="handwritten-red">Responsible Parenthood and Reproductive Health Act</p>
+
+            <h4>What it says:</h4>
+            <ul class="checkbox-list">
+              <li class="checked">Provides universal access sa reproductive health care services</li>
+              <li class="checked">Mandates age- and development-appropriate reproductive health education sa schools<sup>[11]</sup></li>
+              <li class="checked">Guarantees access sa medically-safe, non-abortifacient contraceptives</li>
+              <li class="checked">Prohibits discrimination based sa reproductive health decisions</li>
+            </ul>
+
+            <h4>Who it protects:</h4>
+            <p>Everyone, including adolescents, especially poor women at those in remote areas.</p>
+
+            <h4>What it means for teenagers:</h4>
+            <p>You have the right to accurate information about reproductive health at sexuality education. You can access family planning services (with parental guidance for minors).</p>
+
+            <h4>Key provisions for teens:</h4>
+            <ul class="checkbox-list">
+              <li class="checked">Section 14: Age- and development-appropriate RH education<sup>[11]</sup></li>
+              <li class="checked">Section 23: Prohibits withholding of RH information</li>
+            </ul>
+
+            <p style="font-size: 0.9rem; color: #666;">
+              Source: Official Gazette of the Philippines<sup>[11]</sup>
+            </p>
+          </div>
+        </div>
+
+        <!-- Child Protection Tab -->
+        <div class="tab-content" id="tab-child" role="tabpanel" aria-labelledby="btn-child">
+          <div class="paper-clip-card">
+            <h3>RA 7610 (1992)</h3>
+            <p class="handwritten-red">Special Protection of Children Against Abuse, Exploitation and Discrimination Act</p>
+
+            <h4>What it says:</h4>
+            <ul class="checkbox-list">
+              <li class="checked">Protects children from all forms of abuse, including sexual abuse</li>
+              <li class="checked">Criminalizes child abuse and exploitation</li>
+              <li class="checked">Mandates reporting of child abuse cases</li>
+            </ul>
+
+            <h4>Who it protects:</h4>
+            <p>All children (persons below 18 years old).</p>
+
+            <h4>What it means for teenagers:</h4>
+            <p>If you are being abused, exploited, or coerced, this law protects you. Adults who abuse children face criminal penalties.</p>
+
+            <h4>Penalties:</h4>
+            <p>Imprisonment and fines depending on the gravity of the abuse.</p>
+
+            <p style="font-size: 0.9rem; color: #666;">
+              Source: Lawphil<sup>[12]</sup>
+            </p>
+          </div>
+
+          <div class="paper-clip-card" style="margin-top: var(--space-lg);">
+            <h3>RA 8353 (1997)</h3>
+            <p class="handwritten-red">Anti-Rape Law of 1997</p>
+
+            <h4>What it says:</h4>
+            <ul class="checkbox-list">
+              <li class="checked">Reclassified rape as a crime against persons (not against chastity)</li>
+              <li class="checked">Expanded definition of rape</li>
+              <li class="checked">Removed the requirement that the victim must "resist to the utmost"</li>
+            </ul>
+
+            <h4>Who it protects:</h4>
+            <p>All persons, especially women and children.</p>
+
+            <p style="font-size: 0.9rem; color: #666;">
+              Source: Lawphil<sup>[13]</sup>
+            </p>
+          </div>
+        </div>
+
+        <!-- Age of Consent Tab -->
+        <div class="tab-content" id="tab-consent" role="tabpanel" aria-labelledby="btn-consent">
+          <div class="paper-clip-card">
+            <h3>RA 11648 (2022)</h3>
+            <p class="handwritten-red">Raised Age of Sexual Consent to 16</p>
+
+            <h4>What it says:</h4>
+            <ul class="checkbox-list">
+              <li class="checked">Raised the age of sexual consent from 12 to 16 years old<sup>[9]</sup></li>
+              <li class="checked">Sexual activity with anyone under 16 is statutory rape</li>
+              <li class="checked">Exception: No criminal liability if age difference is ≤3 years, consensual, non-abusive, non-exploitative (but NOT if victim is under 13)<sup>[9]</sup></li>
+            </ul>
+
+            <h4>Who it protects:</h4>
+            <p>Children and adolescents under 16 years old from sexual exploitation and abuse.</p>
+
+            <h4>What it means for teenagers:</h4>
+            <p>Anyone under 16 cannot legally consent to sex. Sexual activity with them is considered rape, with narrow exceptions for close-in-age relationships (but never for under 13).</p>
+
+            <h4>Penalties:</h4>
+            <p>Rape is punishable by reclusion perpetua (20-40 years) or reclusion temporal (12-20 years), depending on circumstances.</p>
+
+            <p style="font-size: 0.9rem; color: #666;">
+              Source: Official Gazette<sup>[9]</sup>
+            </p>
+          </div>
+        </div>
+
+        <!-- Child Marriage Tab -->
+        <div class="tab-content" id="tab-marriage" role="tabpanel" aria-labelledby="btn-marriage">
+          <div class="paper-clip-card">
+            <h3>RA 11596 (2021)</h3>
+            <p class="handwritten-red">Prohibiting Child Marriage</p>
+
+            <h4>What it says:</h4>
+            <ul class="checkbox-list">
+              <li class="checked">Prohibits child marriage (marriage before 18 years old)<sup>[14]</sup></li>
+              <li class="checked">Declares child betrothal and marriage as having no legal effect<sup>[14]</sup></li>
+              <li class="checked">Criminalizes facilitation of child marriage</li>
+            </ul>
+
+            <h4>Who it protects:</h4>
+            <p>All children under 18 years old, especially girls.</p>
+
+            <h4>What it means for teenagers:</h4>
+            <p>You cannot legally marry before 18. Any marriage before 18 is void. Adults who arrange child marriage face criminal penalties.</p>
+
+            <h4>Penalties:</h4>
+            <ul class="checkbox-list">
+              <li class="checked">Prision mayor (6-12 years) and fine of P40,000<sup>[14]</sup></li>
+              <li class="checked">If perpetrator is parent/guardian: Prision mayor in maximum period, fine of P50,000, and perpetual loss of parental authority<sup>[14]</sup></li>
+            </ul>
+
+            <p style="font-size: 0.9rem; color: #666;">
+              Source: Supreme Court E-Library<sup>[14]</sup>
+            </p>
+          </div>
+        </div>
+
+        <!-- Education Rights Tab -->
+        <div class="tab-content" id="tab-education" role="tabpanel" aria-labelledby="btn-education">
+          <div class="paper-clip-card">
+            <h3>RA 9710 (2009)</h3>
+            <p class="handwritten-red">Magna Carta of Women</p>
+
+            <h4>What it says:</h4>
+            <ul class="checkbox-list">
+              <li class="checked">Prohibits expulsion or non-readmission of female students due to pregnancy outside of marriage<sup>[15]</sup></li>
+              <li class="checked">Prohibits refusing admission solely because of pregnancy<sup>[15]</sup></li>
+            </ul>
+
+            <h4>Who it protects:</h4>
+            <p>Female students and faculty who become pregnant outside of marriage.</p>
+
+            <h4>What it means for teenagers:</h4>
+            <p>Schools cannot kick you out or refuse to admit you just because you're pregnant. You have the right to continue your education.</p>
+
+            <p style="font-size: 0.9rem; color: #666;">
+              Source: Philippine Commission on Women<sup>[15]</sup>
+            </p>
+          </div>
+
+          <div class="paper-clip-card" style="margin-top: var(--space-lg);">
+            <h3>DepEd Order No. 31, s. 2018</h3>
+            <p class="handwritten-red">Comprehensive Sexuality Education Policy</p>
+
+            <h4>What it says:</h4>
+            <ul class="checkbox-list">
+              <li class="checked">Establishes policy guidelines for implementing CSE in all schools<sup>[12]</sup></li>
+              <li class="checked">CSE is age-appropriate, culturally relevant, scientifically accurate<sup>[12]</sup></li>
+              <li class="checked">Applies to all learners in public and private schools<sup>[12]</sup></li>
+            </ul>
+
+            <h4>What it means for teenagers:</h4>
+            <p>You should receive comprehensive sexuality education in school that is accurate and appropriate for your age.</p>
+
+            <p style="font-size: 0.9rem; color: #666;">
+              Source: Department of Education<sup>[12]</sup>
+            </p>
+          </div>
+        </div>
+
+        <!-- Executive Orders Tab -->
+        <div class="tab-content" id="tab-executive" role="tabpanel" aria-labelledby="btn-executive">
+          <div class="paper-clip-card">
+            <h3>Executive Order No. 141 (2021)</h3>
+            <p class="handwritten-red">Teenage Pregnancy Prevention as National Priority</p>
+
+            <h4>What it says:</h4>
+            <ul class="checkbox-list">
+              <li class="checked">Adopts prevention of teenage pregnancies as a National Priority<sup>[16]</sup></li>
+              <li class="checked">Mobilizes government agencies to address root causes<sup>[16]</sup></li>
+              <li class="checked">Recognizes gender norms, lack of information, and discrimination as root causes<sup>[16]</sup></li>
+              <li class="checked">Strengthens adolescents' capacity to make informed decisions<sup>[16]</sup></li>
+            </ul>
+
+            <h4>What it means for teenagers:</h4>
+            <p>The government is required to coordinate efforts to prevent teenage pregnancy through education, health services, and addressing gender norms.</p>
+
+            <p style="font-size: 0.9rem; color: #666;">
+              Source: Official Gazette<sup>[16]</sup>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pending Bills -->
+      <section class="yellow-pad torn-edge" style="margin: var(--space-xl) 0; padding: var(--space-xl);">
+        <h2>Pending Bills (NOT YET LAW)</h2>
+
+        <div style="background: #FFF0F0; border-left: 4px solid var(--teacher-red); padding: var(--space-md); margin: var(--space-lg) 0;">
+          <p style="margin: 0; font-weight: 600;">
+            ⚠️ These are proposed bills. They are NOT yet law. They may change or may not be passed.
+          </p>
+        </div>
+
+        <div class="paper-clip-card">
+          <h3>Adolescent Pregnancy Prevention Bill</h3>
+          <p class="handwritten-red">Various versions filed in Congress</p>
+
+          <p>
+            There have been several bills filed to strengthen adolescent pregnancy prevention efforts, including:
+          </p>
+
+          <ul class="checkbox-list">
+            <li class="checked">Strengthening implementation of CSE</li>
+            <li class="checked">Improving access to adolescent-friendly health services</li>
+            <li class="checked">Providing support for adolescent parents</li>
+            <li class="checked">Addressing social determinants like poverty</li>
+          </ul>
+
+          <p class="handwritten-red" style="margin-top: var(--space-md);">
+            [TO VERIFY: Check current status of these bills in the 18th or 19th Congress]
+          </p>
+        </div>
+      </section>
+
+      <!-- What You Can Do -->
+      <section style="margin: var(--space-xl) 0;">
+        <h2>What You Can Do</h2>
+
+        <div class="sticky-note" style="transform: rotate(-1deg);">
+          <p class="handwritten">
+            Know your rights. Ang batas ay nandiyan para protektahan ka, hindi parusahan ka.
+          </p>
+        </div>
+
+        <ul class="checkbox-list">
+          <li class="checked">If you're pregnant, you have the right to stay in school (RA 9710)</li>
+          <li class="checked">If you're under 16 and someone is pressuring you for sex, that's illegal (RA 11648)</li>
+          <li class="checked">If you're being abused, you can report it (RA 7610)</li>
+          <li class="checked">You have the right to accurate RH information (RA 10354)</li>
+        </ul>
+
+        <p>
+          For legal advice, consult with a lawyer or reach out to organizations like the Public Attorney's Office (PAO) or the Commission on Human Rights (CHR).
+        </p>
+      </section>
+
+      <div style="background: var(--teacher-red); color: white; padding: var(--space-md); border-radius: var(--radius-sm); margin: var(--space-xl) 0;">
+        <p style="margin: 0; font-weight: 600;">
+          ⚠️ Note: This page is for educational purposes only. It is not legal advice. For legal concerns, consult a qualified lawyer.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="help-banner">
+        <p style="margin: 0; font-size: 1.1rem;">
+          Need help right now? <a href="get-help.html">Visit the Get Help page →</a>
+        </p>
+      </div>
+
+      <p class="disclaimer">
+        This website is for educational purposes only. It is not medical or legal advice.
+      </p>
+
+      <p class="handwritten" style="font-size: 0.9rem;">
+        Created for Gender and Society class • School Project
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const isOpen = menu.classList.contains('open');
+      menu.classList.toggle('open');
+      menu.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    }
+
+    function showTab(tabName) {
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+        content.setAttribute('aria-hidden', 'true');
+      });
+
+      // Deactivate all tab buttons
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      // Show selected tab content
+      document.getElementById('tab-' + tabName).classList.add('active');
+      document.getElementById('tab-' + tabName).setAttribute('aria-hidden', 'false');
+
+      // Activate selected tab button
+      document.getElementById('btn-' + tabName).classList.add('active');
+      document.getElementById('btn-' + tabName).setAttribute('aria-selected', 'true');
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.querySelector('.mobile-menu-btn');
+      if (menu.classList.contains('open') && !menu.contains(event.target) && !btn.contains(event.target)) {
+        toggleMenu();
+      }
+    });
+  </script>
+</body>
+</html>

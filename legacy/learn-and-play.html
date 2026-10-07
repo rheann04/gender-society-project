@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn & Play | Teenage Pregnancy sa Pilipinas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Fraunces:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰ Menu</button>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" aria-label="Close menu" onclick="toggleMenu()">✕</button>
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="the-numbers.html" onclick="toggleMenu()">The Numbers</a>
+    <a href="why-it-happens.html" onclick="toggleMenu()">Why It Happens</a>
+    <a href="know-the-law.html" onclick="toggleMenu()">Know the Law</a>
+    <a href="learn-and-play.html" onclick="toggleMenu()">Learn & Play</a>
+    <a href="get-help.html" onclick="toggleMenu()">Get Help</a>
+    <a href="about-us.html" onclick="toggleMenu()">About Us</a>
+    <a href="references.html" onclick="toggleMenu()">References</a>
+  </div>
+
+  <nav class="nav-tabs" aria-label="Page navigation">
+    <a href="index.html" class="nav-tab">Home</a>
+    <a href="the-numbers.html" class="nav-tab">Numbers</a>
+    <a href="why-it-happens.html" class="nav-tab">Why</a>
+    <a href="know-the-law.html" class="nav-tab">Laws</a>
+    <a href="learn-and-play.html" class="nav-tab active" aria-current="page">Play</a>
+    <a href="get-help.html" class="nav-tab">Help</a>
+    <a href="about-us.html" class="nav-tab">About</a>
+    <a href="references.html" class="nav-tab">Refs</a>
+  </nav>
+
+  <main id="main-content" class="notebook-paper">
+    <div class="container">
+      <h1>
+        <span class="handwritten">Learn</span>
+        <span class="highlight">& Play</span>
+      </h1>
+
+      <p class="handwritten" style="font-size: 1.3rem;">
+        Interactive features to test what you know at learn something new.
+      </p>
+
+      <!-- Section Navigation -->
+      <div class="tabs" role="tablist" aria-label="Interactive features">
+        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-myth" id="btn-myth" onclick="showTab('myth')">Myth or Fact?</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-tanong" id="btn-tanong" onclick="showTab('tanong')">Tanong Box</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-story" id="btn-story" onclick="showTab('story')">Ano'ng Gagawin Mo?</button>
+      </div>
+
+      <!-- Myth or Fact Game -->
+      <div class="tab-content active" id="tab-myth" role="tabpanel" aria-labelledby="btn-myth">
+        <section class="graph-paper folded-corner" style="margin: var(--space-xl) 0; padding: var(--space-xl);">
+          <h2>Myth or Fact?</h2>
+          <p>
+            Mark each statement as Myth or Fact. Tapos, makikita mo ang tamang sagot with sources.
+          </p>
+
+          <div class="myth-fact-container">
+            <!-- Game Card -->
+            <div class="myth-fact-card" id="myth-fact-card">
+              <!-- Progress Header -->
+              <div class="myth-fact-progress">
+                <div>
+                  <div class="myth-fact-question-number" id="question-number">Question 1 of 10</div>
+                  <div class="myth-fact-tally" id="tally-marks" aria-hidden="true">
+                    <!-- Tally marks will be rendered here -->
+                  </div>
+                </div>
+                <div class="myth-fact-score" id="running-score">Score: 0/10</div>
+              </div>
+
+              <!-- Statement -->
+              <div class="myth-fact-statement" id="myth-fact-statement">
+                Loading...
+              </div>
+
+              <!-- Answer Buttons -->
+              <div class="myth-fact-buttons">
+                <button class="myth-fact-btn" id="btn-myth" onclick="selectAnswer('myth')" aria-label="Myth">
+                  MYTH
+                </button>
+                <button class="myth-fact-btn" id="btn-fact" onclick="selectAnswer('fact')" aria-label="Fact">
+                  FACT
+                </button>
+              </div>
+
+              <!-- Feedback -->
+              <div class="myth-fact-feedback" id="myth-fact-feedback" role="alert" aria-live="polite">
+                <div class="myth-fact-feedback-text" id="feedback-text"></div>
+                <div class="myth-fact-explanation">
+                  <div class="myth-fact-myth-correction">
+                    <span class="myth-fact-myth" id="myth-text"></span>
+                    <span class="myth-fact-correction" id="correction-text"></span>
+                  </div>
+                  <p class="myth-fact-source" id="source-text"></p>
+                </div>
+              </div>
+
+              <!-- Next Button -->
+              <button class="btn myth-fact-next-btn" id="next-btn" onclick="nextQuestion()">
+                Next question →
+              </button>
+            </div>
+
+            <!-- End Screen -->
+            <div class="myth-fact-end-screen" id="end-screen">
+              <h3 class="myth-fact-final-score" id="final-score">Your Score: 0/10</h3>
+              <div class="myth-fact-stamp" id="final-stamp">A+ (walang judgment)</div>
+              <div>
+                <button class="btn myth-fact-play-again" onclick="restartGame()">
+                  Play again
+                </button>
+                <a href="references.html" class="btn btn-secondary myth-fact-play-again">
+                  See references →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Tanong Box -->
+      <div class="tab-content" id="tab-tanong" role="tabpanel" aria-labelledby="btn-tanong">
+        <section class="yellow-pad torn-edge" style="margin: var(--space-xl) 0; padding: var(--space-xl);">
+          <h2>Tanong Box</h2>
+          <p>
+            Common questions from teens with honest, age-appropriate answers. Sources: DOH, WHO, UNFPA.
+          </p>
+
+          <div id="tanong-accordion">
+            <!-- Tanong items will be rendered here -->
+          </div>
+
+          <div class="paper-clip-card" style="margin-top: var(--space-xl);">
+            <h3>May Tanong Ka?</h3>
+            <p>
+              Mag-type ng tanong mo dito. <span class="red-pen">Hindi ito papasok o ma-save</span> — this is just for you to write down your thoughts.
+            </p>
+
+            <label for="user-question" class="visually-hidden">Write your question</label>
+            <textarea id="user-question" rows="3" placeholder="I-type ang tanong mo dito..."></textarea>
+
+            <p class="handwritten" style="font-size: 0.9rem; color: #666;">
+              Remember: For real answers, talk to a trusted adult, guidance counselor, or health professional.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Branching Story -->
+      <div class="tab-content" id="tab-story" role="tabpanel" aria-labelledby="btn-story">
+        <section class="graph-paper folded-corner" style="margin: var(--space-xl) 0; padding: var(--space-xl);">
+          <h2>Ano'ng Gagawin Mo?</h2>
+
+          <div style="background: #FFF0F0; border-left: 4px solid var(--teacher-red); padding: var(--space-md); margin: var(--space-lg) 0;">
+            <p style="margin: 0; font-weight: 600;">
+              ⚠️ Fictional story for educational purposes only.
+            </p>
+          </div>
+
+          <p>
+            This is a fictional story about a teen facing a real situation. Make choices and see what happens. <span class="handwritten-red">Walang judgment.</span>
+          </p>
+
+          <div id="story-container">
+            <!-- Story content will be rendered here -->
+          </div>
+
+          <button class="btn" onclick="resetStory()" style="margin-top: var(--space-lg); display: none;" id="reset-story-btn">
+            Start Over
+          </button>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="help-banner">
+        <p style="margin: 0; font-size: 1.1rem;">
+          Need help right now? <a href="get-help.html">Visit the Get Help page →</a>
+        </p>
+      </div>
+
+      <p class="disclaimer">
+        This website is for educational purposes only. It is not medical or legal advice.
+      </p>
+
+      <p class="handwritten" style="font-size: 0.9rem;">
+        Created for Gender and Society class • School Project
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const isOpen = menu.classList.contains('open');
+      menu.classList.toggle('open');
+      menu.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    }
+
+    // Tab switching
+    function showTab(tabName) {
+      document.querySelectorAll('.tab-content').forEach(content => {
+        content.classList.remove('active');
+        content.setAttribute('aria-hidden', 'true');
+      });
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-selected', 'false');
+      });
+
+      document.getElementById('tab-' + tabName).classList.add('active');
+      document.getElementById('tab-' + tabName).setAttribute('aria-hidden', 'false');
+
+      document.getElementById('btn-' + tabName).classList.add('active');
+      document.getElementById('btn-' + tabName).setAttribute('aria-selected', 'true');
+    }
+
+    // Myth or Fact Game Data
+    const mythFactData = [
+      {
+        statement: "Talking about sex in school makes teenagers more likely to have sex.",
+        isMyth: true,
+        correction: "Research shows CSE delays sexual initiation and increases protection use<sup>[8]</sup>.",
+        source: "UNESCO, UNFPA, WHO (2018)"
+      },
+      {
+        statement: "Only girls can get pregnant, so only girls need to know about reproductive health.",
+        isMyth: true,
+        correction: "Teen fathers have responsibilities too. Everyone needs accurate information<sup>[6]</sup>.",
+        source: "POPCOM"
+      },
+      {
+        statement: "Teenage pregnancy is only a problem in poor families.",
+        isMyth: true,
+        correction: "It's more common in poor families (10.3% vs 1.8%), but it affects all income levels<sup>[1]</sup>.",
+        source: "PSA 2022 NDHS"
+      },
+      {
+        statement: "Schools can expel students who get pregnant.",
+        isMyth: true,
+        correction: "RA 9710 prohibits expulsion or non-admission due to pregnancy<sup>[15]</sup>.",
+        source: "Magna Carta of Women"
+      },
+      {
+        statement: "The age of sexual consent in the Philippines is 16 years old.",
+        isFact: true,
+        correction: "RA 11648 raised it from 12 to 16 in 2022<sup>[9]</sup>.",
+        source: "Official Gazette"
+      },
+      {
+        statement: "Very young mothers (10-14) are usually victims of abuse.",
+        isFact: true,
+        correction: "Only 21 fathers were of similar age to 3,343 mothers aged 9-14 in 2023<sup>[2]</sup>.",
+        source: "POPCOM/PSA"
+      },
+      {
+        statement: "Contraceptives are illegal in the Philippines.",
+        isMyth: true,
+        correction: "RA 10354 guarantees access to medically-safe, non-abortifacient contraceptives<sup>[11]</sup>.",
+        source: "RH Law"
+      },
+      {
+        statement: "Child marriage is now illegal in the Philippines.",
+        isFact: true,
+        correction: "RA 11596 prohibits child marriage and declares it void<sup>[14]</sup>.",
+        source: "Supreme Court E-Library"
+      },
+      {
+        statement: "Teenage pregnancy rates have been increasing in the Philippines.",
+        isMyth: true,
+        correction: "Rates declined from 8.6% in 2017 to 5.4% in 2022, but remain a concern<sup>[1]</sup>.",
+        source: "PSA 2022 NDHS"
+      },
+      {
+        statement: "Teen mothers can continue their education through ALS.",
+        isFact: true,
+        correction: "DepEd encourages teen mothers to enroll in ALS or skills training<sup>[10]</sup>.",
+        source: "DepEd"
+      }
+    ];
+
+    // Myth/Fact Game State
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
+
+    // Initialize Myth/Fact Game
+    function initMythFactGame() {
+      currentQuestion = 0;
+      score = 0;
+      answered = false;
+      renderTallyMarks();
+      loadQuestion();
+    }
+
+    // Render tally marks
+    function renderTallyMarks() {
+      const tallyContainer = document.getElementById('tally-marks');
+      tallyContainer.innerHTML = '';
+
+      for (let i = 0; i < mythFactData.length; i++) {
+        const mark = document.createElement('div');
+        mark.className = 'myth-fact-tally-mark';
+        if (i < currentQuestion) {
+          mark.classList.add('complete');
+        } else {
+          mark.classList.add('incomplete');
+        }
+        tallyContainer.appendChild(mark);
+      }
+    }
+
+    // Load current question
+    function loadQuestion() {
+      const item = mythFactData[currentQuestion];
+
+      // Update question number
+      document.getElementById('question-number').textContent = `Question ${currentQuestion + 1} of ${mythFactData.length}`;
+
+      // Update score
+      document.getElementById('running-score').textContent = `Score: ${score}/${mythFactData.length}`;
+
+      // Update statement
+      document.getElementById('myth-fact-statement').textContent = item.statement;
+
+      // Reset buttons
+      const btnMyth = document.getElementById('btn-myth');
+      const btnFact = document.getElementById('btn-fact');
+
+      btnMyth.className = 'myth-fact-btn';
+      btnFact.className = 'myth-fact-btn';
+      btnMyth.disabled = false;
+      btnFact.disabled = false;
+      btnMyth.innerHTML = 'MYTH';
+      btnFact.innerHTML = 'FACT';
+
+      // Hide feedback
+      document.getElementById('myth-fact-feedback').classList.remove('show');
+      document.getElementById('next-btn').classList.remove('show');
+
+      answered = false;
+    }
+
+    // Select answer
+    function selectAnswer(choice) {
+      if (answered) return;
+      answered = true;
+
+      const item = mythFactData[currentQuestion];
+      const btnMyth = document.getElementById('btn-myth');
+      const btnFact = document.getElementById('btn-fact');
+      const feedbackDiv = document.getElementById('myth-fact-feedback');
+      const feedbackText = document.getElementById('feedback-text');
+      const mythText = document.getElementById('myth-text');
+      const correctionText = document.getElementById('correction-text');
+      const sourceText = document.getElementById('source-text');
+
+      // Determine correct answer
+      const correctAnswer = item.isMyth ? 'myth' : 'fact';
+      const isCorrect = choice === correctAnswer;
+
+      // Disable buttons
+      btnMyth.disabled = true;
+      btnFact.disabled = true;
+
+      // Update button states
+      if (isCorrect) {
+        score++;
+        if (choice === 'myth') {
+          btnMyth.classList.add('correct');
+        } else {
+          btnFact.classList.add('correct');
+        }
+        feedbackText.textContent = 'Tama!';
+        feedbackText.className = 'myth-fact-feedback-text correct';
+      } else {
+        if (choice === 'myth') {
+          btnMyth.classList.add('wrong');
+        } else {
+          btnFact.classList.add('wrong');
+        }
+
+        // Highlight correct answer
+        if (correctAnswer === 'myth') {
+          btnMyth.classList.add('highlight-correct');
+        } else {
+          btnFact.classList.add('highlight-correct');
+        }
+
+        feedbackText.textContent = 'Hindi pa.';
+        feedbackText.className = 'myth-fact-feedback-text wrong';
+      }
+
+      // Update score display
+      document.getElementById('running-score').textContent = `Score: ${score}/${mythFactData.length}`;
+
+      // Show explanation
+      mythText.textContent = item.statement;
+      correctionText.textContent = item.correction;
+      sourceText.textContent = `Source: ${item.source}`;
+
+      feedbackDiv.classList.add('show');
+
+      // Show next button or end game
+      const nextBtn = document.getElementById('next-btn');
+      if (currentQuestion < mythFactData.length - 1) {
+        nextBtn.textContent = 'Next question →';
+        nextBtn.classList.add('show');
+      } else {
+        nextBtn.textContent = 'See results →';
+        nextBtn.classList.add('show');
+      }
+
+      // Update tally marks
+      renderTallyMarks();
+    }
+
+    // Next question
+    function nextQuestion() {
+      if (currentQuestion < mythFactData.length - 1) {
+        currentQuestion++;
+        loadQuestion();
+      } else {
+        showEndScreen();
+      }
+    }
+
+    // Show end screen
+    function showEndScreen() {
+      document.getElementById('myth-fact-card').style.display = 'none';
+      document.getElementById('end-screen').classList.add('show');
+
+      document.getElementById('final-score').textContent = `Your Score: ${score}/${mythFactData.length}`;
+
+      const stamp = document.getElementById('final-stamp');
+      if (score >= 8) {
+        stamp.textContent = 'A+ (walang judgment)';
+      } else if (score >= 6) {
+        stamp.textContent = 'B+ (keep learning)';
+      } else if (score >= 4) {
+        stamp.textContent = 'C+ (good effort)';
+      } else {
+        stamp.textContent = 'CORRECTED';
+      }
+    }
+
+    // Restart game
+    function restartGame() {
+      document.getElementById('myth-fact-card').style.display = 'block';
+      document.getElementById('end-screen').classList.remove('show');
+      initMythFactGame();
+    }
+
+    // Keyboard shortcuts
+    document.addEventListener('keydown', function(e) {
+      // Only handle if myth/fact tab is active and not answered
+      const mythTab = document.getElementById('tab-myth');
+      if (!mythTab.classList.contains('active') || answered) return;
+
+      // M key for Myth, F key for Fact
+      if (e.key === 'm' || e.key === 'M') {
+        selectAnswer('myth');
+      } else if (e.key === 'f' || e.key === 'F') {
+        selectAnswer('fact');
+      }
+    });
+
+    // Tanong Box Data
+    const tanongData = [
+      {
+        question: "What is puberty?",
+        answer: "Puberty is the time when your body changes from a child to an adult. It usually happens between ages 8-13 for girls and 9-14 for boys. You'll experience physical changes like growth spurts, breast development (for girls), voice changes (for boys), and menstruation (for girls). These changes are normal and happen to everyone."
+      },
+      {
+        question: "What is consent?",
+        answer: "Consent means freely agreeing to something without pressure, manipulation, or threats. For sexual activity, consent must be: enthusiastic (not just 'no resistance'), informed (knowing what you're agreeing to), reversible (you can change your mind), specific (agreeing to one thing doesn't mean agreeing to everything), and given by someone who is sober and of legal age. Remember: in the Philippines, the age of sexual consent is 16<sup>[9]</sup>."
+      },
+      {
+        question: "What are contraceptives?",
+        answer: "Contraceptives are methods to prevent pregnancy. Common types include: condoms (for males and females), birth control pills, injectables, implants, and IUDs. Some also protect against STIs (like condoms). Condoms are the only method that protects against both pregnancy and STIs. Under RA 10354, you have the right to access these<sup>[11]</sup>."
+      },
+      {
+        question: "What are the signs of pregnancy?",
+        answer: "Common early signs include: missed period, nausea (morning sickness), breast tenderness, fatigue, frequent urination, and food cravings or aversions. The only way to know for sure is to take a pregnancy test or see a doctor. If you think you might be pregnant, it's important to see a healthcare provider early."
+      },
+      {
+        question: "Where can I get tested or checked?",
+        answer: "You can visit: government health centers (rural health units), private clinics, hospitals, or POPCOM offices. Some offer confidential services for adolescents. Under RA 10354, you have the right to RH information and services<sup>[11]</sup>. For a list of services, check the Get Help page."
+      },
+      {
+        question: "Is it normal to have questions about sex?",
+        answer: "Yes! It's completely normal to have questions about sex, your body, and relationships. Having questions doesn't mean you're planning to have sex — it means you want to be informed. Talking to trusted adults, guidance counselors, or health professionals is better than getting information from unreliable sources."
+      },
+      {
+        question: "What if my partner is pressuring me?",
+        answer: "Pressure is not consent. You have the right to say no at any time, for any reason. If someone pressures, threatens, or manipulates you, that's not okay. You can talk to a trusted adult, guidance counselor, or call a hotline for help. Remember: RA 11648 protects you if you're under 16<sup>[9]</sup>."
+      },
+      {
+        question: "Can I get pregnant the first time?",
+        answer: "Yes, you can get pregnant the first time you have sex. There's no 'safe' first time. If you're sexually active and don't want to get pregnant, you need to use contraception every time. Abstinence is the only 100% effective way to prevent pregnancy, but if you choose to be sexually active, use protection."
+      }
+    ];
+
+    // Render Tanong Accordion
+    function renderTanongAccordion() {
+      const container = document.getElementById('tanong-accordion');
+      container.innerHTML = '';
+
+      tanongData.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'accordion';
+        div.innerHTML = `
+          <button class="accordion-header" aria-expanded="false" aria-controls="tanong-content-${index}" onclick="toggleAccordion(this)">
+            <span>Q: ${item.question}</span>
+          </button>
+          <div class="accordion-content" id="tanong-content-${index}" aria-hidden="true">
+            <p><strong>A:</strong> ${item.answer}</p>
+          </div>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    // Toggle Accordion
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+      button.setAttribute('aria-expanded', !isExpanded);
+      content.setAttribute('aria-hidden', isExpanded);
+    }
+
+    // Branching Story Data
+    const storyData = {
+      start: {
+        text: "You're 16 years old. Your period is 2 weeks late. You've been sexually active with your partner for a few months. You're worried. What do you do?",
+        choices: [
+          { text: "Take a pregnancy test", next: "test" },
+          { text: "Wait and see if it comes", next: "wait" },
+          { text: "Talk to your partner first", next: "partner" }
+        ]
+      },
+      test: {
+        text: "You take a pregnancy test. It's positive. You're pregnant. Now what?",
+        choices: [
+          { text: "Tell your parents/guardians", next: "parents" },
+          { text: "Tell your partner first", next: "partner" },
+          { text: "Keep it to yourself for now", next: "secret" }
+        ]
+      },
+      wait: {
+        text: "You wait another week. Still no period. You're getting more anxious. The stress is affecting your daily life. What now?",
+        choices: [
+          { text: "Take a pregnancy test now", next: "test" },
+          { text: "Talk to a friend", next: "friend" },
+          { text: "Go to a health center", next: "health" }
+        ]
+      },
+      partner: {
+        text: "You tell your partner. They're supportive and say they'll stand by you whatever you decide. You feel a bit relieved. What's your next step?",
+        choices: [
+          { text: "Tell your parents together", next: "parents" },
+          { text: "Go to a health center for check-up", next: "health" },
+          { text: "Take time to think alone first", next: "think" }
+        ]
+      },
+      parents: {
+        text: "You tell your parents. They're shocked and upset at first, but they say they'll support you. They ask about your plans for school. What do you say?",
+        choices: [
+          { text: "I want to stay in school", next: "school" },
+          { text: "I don't know yet", next: "uncertain" },
+          { text: "I might need to take a break", next: "break" }
+        ]
+      },
+      secret: {
+        text: "You keep it to yourself. The stress builds up. You're not eating well and having trouble focusing at school. This isn't sustainable. What do you do?",
+        choices: [
+          { text: "Talk to a guidance counselor", next: "counselor" },
+          { text: "Tell a trusted friend", next: "friend" },
+          { text: "Finally tell your parents", next: "parents" }
+        ]
+      },
+      friend: {
+        text: "You tell a friend. They listen but don't know what to advise. They suggest you talk to an adult. They're right — you need more support.",
+        choices: [
+          { text: "Talk to your parents", next: "parents" },
+          { text: "Talk to a guidance counselor", next: "counselor" },
+          { text: "Go to a health center", next: "health" }
+        ]
+      },
+      health: {
+        text: "You go to a health center. The staff is professional and doesn't judge you. They confirm the pregnancy and give you information about your options and prenatal care. You feel more informed.",
+        choices: [
+          { text: "Tell your parents", next: "parents" },
+          { text: "Talk to a counselor about options", next: "counselor" },
+          { text: "Take time to decide", next: "think" }
+        ]
+      },
+      counselor: {
+        text: "You talk to a guidance counselor. They listen without judgment and help you understand your options. They remind you that under RA 9710, you have the right to stay in school<sup>[15]</sup>. You feel supported.",
+        choices: [
+          { text: "Tell your parents with counselor's help", next: "parents-counselor" },
+          { text: "Take time to think", next: "think" },
+          { text: "Get more information first", next: "health" }
+        ]
+      },
+      think: {
+        text: "You take time to think. You research your options, talk to trusted people, and reflect on what you want. You realize you need support. What do you do?",
+        choices: [
+          { text: "Tell your parents", next: "parents" },
+          { text: "Continue with support system", next: "support" },
+          { text: "Seek professional counseling", next: "counselor" }
+        ]
+      },
+      school: {
+        text: "You decide to stay in school. Under RA 9710, the school cannot expel you for being pregnant<sup>[15]</sup>. You talk to your teachers about accommodations. It won't be easy, but you're determined to continue your education.",
+        choices: [],
+        ending: true,
+        message: "This is a challenging path, but you have rights and support. Remember: pregnancy shouldn't end your education."
+      },
+      uncertain: {
+        text: "It's okay not to know right now. Take time to process. Talk to counselors, health professionals, and trusted adults. You don't have to decide everything at once.",
+        choices: [],
+        ending: true,
+        message: "Take it one step at a time. Seek support and information. You're not alone in this."
+      },
+      break: {
+        text: "Taking a break is an option, but remember: you can return to school through ALS or other programs<sup>[10]</sup>. Education is still possible. Talk to DepEd or ALS coordinators about your options.",
+        choices: [],
+        ending: true,
+        message: "A break doesn't mean giving up on education permanently. There are pathways back."
+      },
+      "parents-counselor": {
+        text: "With your counselor's support, you tell your parents. The counselor helps mediate the conversation. Your parents are better prepared to support you. This is a positive step.",
+        choices: [],
+        ending: true,
+        message: "Having a neutral adult help can make difficult conversations easier. You did the right thing seeking support."
+      },
+      support: {
+        text: "You build a support system: family, friends, counselors, health professionals. With this network, you feel more prepared to face the challenges ahead. You know it won't be easy, but you're not alone.",
+        choices: [],
+        ending: true,
+        message: "Support systems make all the difference. Don't be afraid to ask for help."
+      }
+    };
+
+    // Render Story
+    function renderStory(nodeKey) {
+      const container = document.getElementById('story-container');
+      const node = storyData[nodeKey];
+
+      let html = `
+        <div class="paper-clip-card">
+          <p>${node.text}</p>
+      `;
+
+      if (node.ending) {
+        html += `
+          <div class="sticky-note" style="transform: rotate(-1deg); margin-top: var(--space-md);">
+            <p class="handwritten-red">${node.message}</p>
+          </div>
+          <p style="margin-top: var(--space-md);">
+            <a href="get-help.html" class="btn">Get Help →</a>
+          </p>
+        `;
+        document.getElementById('reset-story-btn').style.display = 'inline-block';
+      } else {
+        html += `<div style="margin-top: var(--space-lg);">`;
+        node.choices.forEach((choice, index) => {
+          html += `
+            <button class="btn btn-secondary" onclick="renderStory('${choice.next}')" style="display: block; margin-bottom: var(--space-sm); width: 100%;">
+              ${choice.text}
+            </button>
+          `;
+        });
+        html += `</div>`;
+      }
+
+      html += `</div>`;
+      container.innerHTML = html;
+    }
+
+    // Reset Story
+    function resetStory() {
+      renderStory('start');
+      document.getElementById('reset-story-btn').style.display = 'none';
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      initMythFactGame();
+      renderTanongAccordion();
+      renderStory('start');
+    });
+
+    // Close mobile menu on outside click
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.querySelector('.mobile-menu-btn');
+      if (menu.classList.contains('open') && !menu.contains(event.target) && !btn.contains(event.target)) {
+        toggleMenu();
+      }
+    });
+  </script>
+</body>
+</html>

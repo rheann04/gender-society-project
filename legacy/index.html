@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-PH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teenage Pregnancy sa Pilipinas | Gender and Society Project</title>
+  <meta name="description" content="Isang website tungkol sa teenage pregnancy sa Pilipinas at kung bakit mahalaga ang comprehensive sexuality education.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Fraunces:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Mobile Menu Button -->
+  <button class="mobile-menu-btn" aria-label="Open menu" onclick="toggleMenu()">☰ Menu</button>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="mobile-menu-close" aria-label="Close menu" onclick="toggleMenu()">✕</button>
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="the-numbers.html" onclick="toggleMenu()">The Numbers</a>
+    <a href="why-it-happens.html" onclick="toggleMenu()">Why It Happens</a>
+    <a href="know-the-law.html" onclick="toggleMenu()">Know the Law</a>
+    <a href="learn-and-play.html" onclick="toggleMenu()">Learn & Play</a>
+    <a href="get-help.html" onclick="toggleMenu()">Get Help</a>
+    <a href="about-us.html" onclick="toggleMenu()">About Us</a>
+    <a href="references.html" onclick="toggleMenu()">References</a>
+  </div>
+
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs" aria-label="Page navigation">
+    <a href="index.html" class="nav-tab active" aria-current="page">Home</a>
+    <a href="the-numbers.html" class="nav-tab">Numbers</a>
+    <a href="why-it-happens.html" class="nav-tab">Why</a>
+    <a href="know-the-law.html" class="nav-tab">Laws</a>
+    <a href="learn-and-play.html" class="nav-tab">Play</a>
+    <a href="get-help.html" class="nav-tab">Help</a>
+    <a href="about-us.html" class="nav-tab">About</a>
+    <a href="references.html" class="nav-tab">Refs</a>
+  </nav>
+
+  <main id="main-content" class="notebook-paper">
+    <div class="container">
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>
+          <span class="handwritten">Hindi ito</span>
+          <span class="red-pen">shaming.</span>
+          <br>
+          <span class="highlight">Teenage Pregnancy</span>
+          <br>
+          <span class="handwritten">sa Pilipinas</span>
+        </h1>
+
+        <p class="handwritten" style="font-size: 1.4rem; margin: var(--space-lg) 0;">
+          Isang totoong usap tungkol sa isang totoong problema — at kung ano ang pwede nating gawin.
+        </p>
+
+        <!-- Photo: School Hallway -->
+        <div class="notebook-photo taped placeholder" style="max-width: 400px; margin: var(--space-xl) auto;">
+          <img src="assets/photos/PLACEHOLDER-school-hallway.jpg" alt="Empty school hallway with classrooms on either side, showing an educational setting" width="400" height="300" loading="lazy">
+          <div class="photo-caption">School is where it starts. Education is protection.</div>
+        </div>
+
+        <!-- Standout Statistic -->
+        <div class="paper-clip-card folded-corner" style="margin: var(--space-xl) 0; max-width: 500px;">
+          <div class="hand-number">5.4%</div>
+          <p>
+            <strong>ng kababaihang 15-19 taong gulang</strong> ay naging buntis noong 2022<sup>[1]</sup>.
+            <br><br>
+            <span class="handwritten-red">Mababa kaysa sa 8.6% noong 2017, pero hindi pa sapat.</span>
+          </p>
+          <p class="handwritten" style="font-size: 0.9rem; color: #666;">
+            Source: Philippine Statistics Authority, 2022 NDHS
+          </p>
+        </div>
+
+        <!-- Two Paths -->
+        <div style="display: flex; flex-direction: column; gap: var(--space-md); margin: var(--space-xl) 0;">
+          <a href="the-numbers.html" class="btn">
+            See the numbers →
+          </a>
+          <a href="learn-and-play.html" class="btn btn-secondary">
+            Test what you know →
+          </a>
+        </div>
+      </section>
+
+      <!-- Why This Matters -->
+      <section class="yellow-pad torn-edge" style="margin: var(--space-2xl) 0; padding: var(--space-xl);">
+        <h2 class="handwritten-red">Bakit ito mahalaga?</h2>
+
+        <p>
+          Ang teenage pregnancy ay hindi lang "problema ng mga bata." Ito ay <span class="highlight">isyung pangkalusugan, edukasyon, at ekonomiya</span> na umaapekto sa buong bansa.
+        </p>
+
+        <ul class="checkbox-list">
+          <li>Nabibigo ang mga kabataan na makapagtapos sa pag-aaral<sup>[2]</sup></li>
+          <li>Nadadagdagan ang risk sa kalusugan ng ina at sanggol<sup>[3]</sup></li>
+          <li>Limitado ang opportunities para sa magiging magulang na teen</li>
+          <li>Madalas, ang very young mothers (10-14 years old) ay victims ng abuse<sup>[4]</sup></li>
+        </ul>
+
+        <div class="sticky-note" style="margin: var(--space-lg) 0;">
+          <p>
+            Ang <strong>comprehensive sexuality education (CSE)</strong> ay hindi tungkol sa pag-encourage ng sex. Ito ay tungkol sa <span class="red-pen">tamang impormasyon</span>, pag-unawa sa consent, at pagprotekta sa sarili.
+          </p>
+        </div>
+
+        <!-- Photo: Notebook and Pen -->
+        <div class="notebook-photo clipped placeholder" style="max-width: 350px; margin: var(--space-lg) auto;">
+          <img src="assets/photos/PLACEHOLDER-notebook-pen.jpg" alt="Open notebook on a desk with a ballpoint pen resting on the page" width="350" height="263" loading="lazy">
+          <div class="photo-caption">Writing our own story.</div>
+        </div>
+
+        <p>
+          Sa website na ito, matutunan mo kung gaano kalaki ang problema, bakit ito nangyayari, ano ang sinasabi ng batas, at saan ka pwede makakuha ng tulong.
+        </p>
+
+        <p class="handwritten">
+          Walang judgment. Langit lang pagkatapos.<br>
+          <span class="handwritten-red">Totoong usap lang.</span>
+        </p>
+      </section>
+
+      <!-- Content Notice -->
+      <div style="background: var(--teacher-red); color: white; padding: var(--space-md); border-radius: var(--radius-sm); margin: var(--space-xl) 0;">
+        <p style="margin: 0; font-weight: 600;">
+          ⚠️ Note: Some pages discuss sensitive topics like abuse. If you need help right now, check the <a href="get-help.html" style="color: white; text-decoration: underline;">Get Help</a> page.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="help-banner">
+        <p style="margin: 0; font-size: 1.1rem;">
+          Need help right now? <a href="get-help.html">Visit the Get Help page →</a>
+        </p>
+      </div>
+
+      <p class="disclaimer">
+        This website is for educational purposes only. It is not medical or legal advice. Always consult qualified professionals for your specific situation.
+      </p>
+
+      <p class="handwritten" style="font-size: 0.9rem;">
+        Created for Gender and Society class • School Project
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      const isOpen = menu.classList.contains('open');
+      menu.classList.toggle('open');
+      menu.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+    }
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.querySelector('.mobile-menu-btn');
+      if (menu.classList.contains('open') && !menu.contains(event.target) && !btn.contains(event.target)) {
+        toggleMenu();
+      }
+    });
+  </script>
+</body>
+</html>
